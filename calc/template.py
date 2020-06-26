@@ -1,15 +1,13 @@
-html = b"""
+html = """
 <html>
 	<body>
-		<form method="GET"  action="">
+		<form action="">
 			x = <input type="number" name="a"><br>
 			y = <input type="number" name="b"><br>
 			<input type="submit">
 		</form>
-		<p>
-		sum : %(sum)i<br>
-		mul : %(mul)i<br>
-		</p>
+		sum : %(sum)d<br>
+		mul : %(mul)d<br>
 	</body>
 </html>
 """
