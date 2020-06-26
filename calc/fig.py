@@ -6,6 +6,14 @@ def application(environ, start_response):
 	a = d.get('a', [''])[0]
 	b = d.get('b', [''])[0]
 	sum, mul = 0, 0
+	if a=='':
+		a=0
+	else:
+		a = int(a)
+	if b=='':
+		b=0
+	else:
+		b = int(b)
 	if '' not in [a, b]:
 		a, b = int(a), int(b)
 		sum = a + b
