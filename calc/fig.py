@@ -6,18 +6,13 @@ def application(environ, start_response):
 	a = d.get('a', [''])[0]
 	b = d.get('b', [''])[0]
 	sum, mul = 0, 0
-	if a=='':
-		a=0
-	else:
-		a = int(a)
-	if b=='':
-		b=0
-	else:
-		b = int(b)
-	if '' not in [a, b]:
+	try:
 		a, b = int(a), int(b)
-		sum = a + b
-		mul = a * b
+		sum = a+b
+		mul = a*b
+	except ValueError:
+		sum = -1
+		mul = -1
 	response_body = html % {'sum':sum, 'mul':mul}
 	start_response('200 OK', [
 		('Content-Type', 'text/html'),
